@@ -5,7 +5,8 @@
 		@if ($customField->field_type == 'dropdown')
 		{{ Form::select('custom[' . $customField->column_name . ']', array_combine(array_merge(array(''), explode(',', $customField->field_meta)), array_merge(array(''), explode(',', $customField->field_meta))), null, array('class' => 'custom-form-field', 'data-field-name' => $customField->column_name)) }}
 		@else
-		{{ Form::{$customField->field_type}('custom[' . $customField->column_name . ']', null, array('class' => 'custom-form-field', 'data-field-name' => $customField->column_name)) }}
+        <?php $field = $customField->field_type; ?>
+		<?php echo Form::$field('custom[' . $customField->column_name . ']', null, array('class' => 'custom-form-field', 'data-field-name' => $customField->column_name)); ?>
 		@endif
 	</div>
 </div>
