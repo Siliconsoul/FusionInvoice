@@ -16,6 +16,7 @@ use Config;
 use Input;
 use Redirect;
 use View;
+use Crypt;
 
 use FI\Classes\Date;
 use FI\Classes\Email;
